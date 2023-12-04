@@ -16,10 +16,9 @@ export default function Signup(){
         e.preventDefault()
         if(!cname ||!fname ||!lname ||!email ||!password){
             console.log("All fields are required")
-           
         }
         else{
-            let res = await fetch('http://localhost:4000/user/test')
+            let res = await fetch('https://ug627f5dha.execute-api.us-east-2.amazonaws.com/test1/signup')
             let data = await res.json()
             console.log(data)
         }
@@ -27,7 +26,8 @@ export default function Signup(){
     }
     return(
         <div className={styles.signup}>
-            <h1>注册</h1>
+            <Test/>
+            <h1>Signup</h1>
             <Input className={styles.input} type="text" placeholder="Username" onChange={(e)=>setLName(e.target.value)}></Input>
             <Input className={styles.input} type="email" placeholder="Email" onChange={(e)=>setEmail(e.target.value)}></Input>
             <Input className={styles.input} type="password" placeholder="Password" onChange={(e)=>setPassword(e.target.value)}></Input>
