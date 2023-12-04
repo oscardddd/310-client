@@ -1,0 +1,33 @@
+.body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 70vh;
+    justify-content: center;
+    row-gap: 20px;
+    font-family: 'Montserrat', sans-serif;
+   
+}
+
+.loginTitle{
+    text-transform: uppercase;
+    font-weight: 300;
+    font-size: 50px;
+}
+
+.input{
+    font-family: 'Montserrat', sans-serif;
+    width: 40%;
+}
+.signup{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: center;
+    row-gap: 20px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+
+

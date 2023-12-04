@@ -1,0 +1,25 @@
+.header{
+    display: flex;
+    flex-direction: row;
+ 
+    justify-content: space-around;
+    align-items: center;
+    
+    
+}
+
+.img{
+    padding-right: 200px;
+}
+.link1{
+    text-decoration: none;
+    font-size: x-large;
+    color: black;
+    padding-right: 30px;
+}
+
+.link2{
+    text-decoration: none;
+    font-size: x-large;
+    color: black;
+}
