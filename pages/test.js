@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import styles from './login.module.css'
 
 export default function Component() {
   const [data, setData] = useState();
@@ -16,9 +17,10 @@ export default function Component() {
   };
 
   return (
-    <div>
-      <button onClick={test}>click</button>
-      <pre>{JSON.stringify(data, null, 2)}</pre>
+    <div className = {styles.wait}>
+      {/* <button onClick={test}>click</button>
+      <pre>{JSON.stringify(data, null, 2)}</pre> */}
+      Please wait! 
     </div>
   );
 };
