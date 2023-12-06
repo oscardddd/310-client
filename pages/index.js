@@ -2,7 +2,7 @@ import { useState } from "react";
 import Link from "next/link";
 import styles from "./login.module.css";
 import { Button, Input } from "antd";
-import { useRouter } from "next/router";
+import { useRouter} from "next/router";
 import Header from "../layout/layout";
 
 export default function Login() {
@@ -19,6 +19,7 @@ export default function Login() {
     if (!email || !password) {
       setError("All fields are required");
     } else {
+      console.log(`email: ${email}, password: ${password}`)
       let res = await fetch(
         "https://ug627f5dha.execute-api.us-east-2.amazonaws.com/test1/login",
         {
@@ -39,8 +40,9 @@ export default function Login() {
       console.log(data);
       if (data.status == "success") {
         const userid = data.userid;
+        alert("successfully logged in")
         router.push({
-          pathname: "/sell",
+          pathname: "/marketplace",
           query: { userid: userid },
         });
       } else {
