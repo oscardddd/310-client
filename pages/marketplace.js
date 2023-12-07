@@ -94,7 +94,35 @@ export default function Component() {
         <div className={styles.marketplace}>
           <Button onClick={sellitem}> Sell Item </Button>
           <Button onClick={myProfile}> My Profile </Button>
-          {data.map((item, index) => (
+          {!data? <p>No Items</p> : 
+            <div>
+              {data.map((item, index) => (
+                <div key={index} className={styles.item}>
+                  <h3>{item.item_name}</h3>
+                  <img 
+                    src={`data:image/jpg;base64,${item.picture}`}
+                    alt={item.item_name}
+                    className={styles.itemImage}
+                    width= "500"
+                    height="500"
+                  />
+                  <p>Owner: {item.owner}</p>
+                  <p>Starting Price: ${item.start_price}</p>
+                  <p>Expires on: {item.expiration_time}</p>
+                  <div>
+                    <input
+                      type="number"
+                      value={bids[item.itemid] || ""}
+                      onChange={(e) => handleBidChange(item.itemid, e.target.value)}
+                      placeholder="Enter bid amount"
+                    />
+                    <button onClick={() => placeBid(item.itemid)}>Place Bid</button>
+                  </div>
+                </div>
+              ))}
+            </div>
+          }
+          {/* {data.map((item, index) => (
             <div key={index} className={styles.item}>
               <h3>{item.item_name}</h3>
               <img 
@@ -117,7 +145,7 @@ export default function Component() {
                 <button onClick={() => placeBid(item.itemid)}>Place Bid</button>
               </div>
             </div>
-          ))}
+          ))} */}
         </div>
         )}
      

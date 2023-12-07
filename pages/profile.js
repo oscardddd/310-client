@@ -35,8 +35,8 @@ export default function Profile() {
       })
 
       fetch(
-        // `https://ug627f5dha.execute-api.us-east-2.amazonaws.com/test1/own/${router.query.userid}`,
-        "https://ug627f5dha.execute-api.us-east-2.amazonaws.com/test1/own/a370c063-c910-4afd-941f-45b5ab59fc7f",
+        `https://ug627f5dha.execute-api.us-east-2.amazonaws.com/test1/own/${router.query.userid}`,
+        // "https://ug627f5dha.execute-api.us-east-2.amazonaws.com/test1/own/a370c063-c910-4afd-941f-45b5ab59fc7f",
         {
           method: "GET",
           headers: {
@@ -98,20 +98,22 @@ export default function Profile() {
   const ItemsList = ({data, type}) => {
     return (
       <>
-        {data.map((item, index) => (
-          <div key={index}>
-            <h3>{item.item_name}</h3>
-            <img 
-              src={`data:image/jpg;base64,/${item.picture}`}
-              alt={item.item_name}
-              width= "500"
-              height="500"
-            />
-            {type == "bought" && <p>Final Price: {item.bought_price}</p>}
-            {type == "selling" && <p>Current Price: {item.price}</p>}
-            <p>Description: {item.description}</p>
-          </div>
-        ))}
+        {data.length == 0? <p>No Items</p> : 
+          <>
+            {data.map((item, index) => (
+              <div key={index}>
+                <h3>{item.item_name}</h3>
+                <img 
+                  src={`data:image/jpg;base64,${item.picture}`}
+                  alt={item.item_name}
+                />
+                {type == "bought" && <p>Final Price: {item.bought_price}</p>}
+                {type == "selling" && <p>Current Price: {item.price}</p>}
+                <p>Description: {item.description}</p>
+              </div>
+            ))}
+          </>
+        }
       </>
     )
   }
@@ -120,7 +122,7 @@ export default function Profile() {
   return (
     <>
       {loading ? (
-        <h1> Loading......</h1>
+        <h1> Loading Profile......</h1>
       ) : (
         <>
           <h1>My Profile Page</h1>
@@ -144,7 +146,7 @@ export default function Profile() {
       )}
 
     {itemsLoading ? (
-        <h1> Loading......</h1>
+        <h1> Loading My Items......</h1>
       ) : (
         <>
           <h1>Items I Bought</h1>
