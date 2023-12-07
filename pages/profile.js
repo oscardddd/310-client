@@ -106,6 +106,8 @@ export default function Profile() {
                 <img 
                   src={`data:image/jpg;base64,${item.picture}`}
                   alt={item.item_name}
+                  width="750"
+                  height="auto"
                 />
                 {type == "bought" && <p>Final Price: {item.bought_price}</p>}
                 {type == "selling" && <p>Current Price: {item.price}</p>}

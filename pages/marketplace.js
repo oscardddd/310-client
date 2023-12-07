@@ -104,7 +104,7 @@ export default function Component() {
                     alt={item.item_name}
                     className={styles.itemImage}
                     width= "500"
-                    height="500"
+                    height="auto"
                   />
                   <p>Owner: {item.owner}</p>
                   <p>Starting Price: ${item.start_price}</p>
