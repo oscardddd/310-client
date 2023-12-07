@@ -58,7 +58,7 @@ export default function Signup() {
             description: description,
             filename: imageFilename,
             data_str: imageData,
-            ttl: 1,
+            ttl: 2,
           }),
         }
       );
