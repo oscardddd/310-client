@@ -7,7 +7,11 @@ Make sure you have node installed on your computer.
 Run
 ```
 npm install
+```
+To install all the packages. 
 
+Then, Run 
+```
 npm run dev
 
 ```
