@@ -53,7 +53,7 @@ export default function Login() {
 
   return (
     <div>
-      <Header className={styles.header} />
+      {/* <Header className={styles.header} /> */}
       <div className={styles.body}>
         <h1 className={styles.loginTitle}>Login</h1>
         <Input
